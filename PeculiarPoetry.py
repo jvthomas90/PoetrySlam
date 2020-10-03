@@ -35,10 +35,30 @@ def lines_printed_random(lines_list):
     for iteration in lines_list:
         print(lines_list[randint(0,7)],end="")
 
+def lines_printed_custom(lines_list):
+    iteration = 0
+    even_lines = []
+    odd_lines = []
+    for currentLine in lines_list:
+        iteration += 1
+        if iteration % 2 == 0:
+            even_lines.append(currentLine)
+        else:
+            odd_lines.append(currentLine)
 
+    print("\nCustomized\n----------")
+    
+    even_length = len(even_lines)
+    for index in range(even_length):
+        print(even_lines[index],end="")
+    
+    odd_length = len(odd_lines)
+    for index in range(odd_length):
+        print(odd_lines[index],end="")
 
 lines_list = get_file_lines(read_poem)
 lines_printed_backwards(lines_list)
 lines_printed_random(lines_list)
+lines_printed_custom(lines_list)
 
 read_poem.close()
