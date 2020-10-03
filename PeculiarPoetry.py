@@ -36,22 +36,32 @@ def lines_printed_random(lines_list):
         print(lines_list[randint(0,7)],end="")
 
 def lines_printed_custom(lines_list):
+    
+    """
+    Takes in the original order and prints out even then odd numbered lines
+    """
+
+    # Init variables
     iteration = 0
     even_lines = []
     odd_lines = []
+
+    # Bifurcate and sort lines_list
     for currentLine in lines_list:
-        iteration += 1
-        if iteration % 2 == 0:
+        iteration += 1 
+        if iteration % 2 == 0: # If line number is divisible by 2, i.e. even number
             even_lines.append(currentLine)
-        else:
+        else: #Else, if line number is odd...
             odd_lines.append(currentLine)
 
     print("\nCustomized\n----------")
-    
+
+    # Prints even lines
     even_length = len(even_lines)
     for index in range(even_length):
         print(even_lines[index],end="")
-    
+        
+    #Prints odd numbered lines
     odd_length = len(odd_lines)
     for index in range(odd_length):
         print(odd_lines[index],end="")
